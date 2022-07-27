@@ -1,10 +1,11 @@
+using CollisionDetection.GroundCollisionDetection.GroundCollisionDetectionManager;
 using CollisionDetection.GroundCollisionDetection.Interface;
 using UnityEngine;
 using UnityEngine.Events;
 
 namespace CollisionDetection.GroundCollisionDetection.BaseImplementation
 {
-    public abstract class GroundCollisionDetectionBase : MonoBehaviour, IGroundCollisionDetection
+    public abstract class GroundCollisionDetectionBase : GroundCollisionDetectorDetectorManager, IGroundCollisionDetectorDetection
     {
         [SerializeField]
         protected LayerMask hitMask;
@@ -12,24 +13,18 @@ namespace CollisionDetection.GroundCollisionDetection.BaseImplementation
         private UnityEvent<bool> onCollisionDetected;
 
         public UnityEvent<bool> OnGroundCollisionDetectedEvent => onCollisionDetected;
-        public bool IsGrounded {
-            get
-            {
-               return isGrounded;
-            }
-            set
-            {
-                isGrounded = value;
-                OnGroundCollisionDetected(value);
-            }
+        public override bool IsGrounded { get; set; }
+
+        public override void DetectCollision()
+        {
+            
         }
-        public abstract void DetectCollision();
 
         protected virtual void OnGroundCollisionDetected(bool isGrounded)
         {
             OnGroundCollisionDetectedEvent.Invoke(isGrounded);
         }
         
-        private bool isGrounded;
+        protected bool isGrounded;
     }
 }

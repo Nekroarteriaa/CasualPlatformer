@@ -1,11 +1,9 @@
 using CollisionDetection.InterfaceBase;
-using UnityEngine.Events;
 
 namespace CollisionDetection.GroundCollisionDetection.Interface
 {
-    public interface IGroundCollisionDetection : ICollisionDetection
+    public interface IGroundCollisionDetectorManager : ICollisionDetection
     {
-        UnityEvent<bool> OnGroundCollisionDetectedEvent { get; }
         bool IsGrounded { get; set; }
     }
 }
