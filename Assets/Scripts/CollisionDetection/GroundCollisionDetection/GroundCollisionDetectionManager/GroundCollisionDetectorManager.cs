@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace CollisionDetection.GroundCollisionDetection.GroundCollisionDetectionManager
 {
-    public class GroundCollisionDetectorDetectorManager : MonoBehaviour, IGroundCollisionDetectorManager
+    public class GroundCollisionDetectorManager : MonoBehaviour, IGroundCollisionDetectorManager
     {
         public virtual void DetectCollision()
         {

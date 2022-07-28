@@ -1,18 +1,22 @@
-using CollisionDetection.GroundCollisionDetection.BaseImplementation;
 using CollisionDetection.GroundCollisionDetection.GroundCollisionDetectionManager;
+using Impulses.BaseImplementation.JumpImpulse;
 using Jump.Rigidbody2DImplementation;
 using Jump.Interface;
 using UnityEngine;
 
 namespace Jump.PlayerJump
 {
-    public class PlayerJumpController2D : MonoBehaviour
+    [RequireComponent(typeof(Rigidbody2D))]
+    public class Rigidbody2DJumpController : MonoBehaviour
     {
+        [SerializeField] 
+        private JumpImpulseBase jumpImpulseBase;
+        
         [SerializeField]
         private Rigidbody2D rigidbody2D;
 
         [SerializeField] 
-        private GroundCollisionDetectorDetectorManager groundCollisionDetectionBase;
+        private GroundCollisionDetectorManager groundCollisionDetectorManager;
 
         [SerializeField] [Range(0f,1f)] 
         private float jumpRecoil;
@@ -25,14 +29,14 @@ namespace Jump.PlayerJump
         
         private void Awake()
         {
-            playerJump = new JumpBehaviourRigidbody2D(rigidbody2D);
+            playerJump = new Rigidbody2DJumpBehaviour(rigidbody2D);
             
         }
 
         // Update is called once per frame
         void FixedUpdate()
         {
-            if (Input.GetKey(KeyCode.Space) && groundCollisionDetectionBase.IsGrounded && Time.time > nextJump)
+            if (jumpImpulseBase.CanJump && groundCollisionDetectorManager.IsGrounded && Time.time > nextJump)
             {
                 playerJump.Jump(jumpImpulse);
                 nextJump = Time.time + jumpRecoil;

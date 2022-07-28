@@ -3,11 +3,11 @@ using UnityEngine;
 
 namespace Movement.Implementation
 {
-    public class MovementBehaviour : IMovement
+    public class TransformMovementBehaviour : IMovement
     {
         private Transform currentTransfrom;
 
-        public MovementBehaviour(Transform currentTransfrom)
+        public TransformMovementBehaviour(Transform currentTransfrom)
         {
             this.currentTransfrom = currentTransfrom;
         }

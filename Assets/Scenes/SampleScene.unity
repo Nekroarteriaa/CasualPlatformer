@@ -283,7 +283,7 @@ MonoBehaviour:
       m_Calls: []
   originPoint: {fileID: 1867372805}
   circleCollisionDetector:
-    DeltaPosition: {x: 0.2, y: -0.55}
+    DeltaPosition: {x: 0.17, y: -0.55}
     CircleRadius: 0.12
     CircleOffsetDistance: 5
 --- !u!1 &348303966
@@ -337,7 +337,7 @@ MonoBehaviour:
       m_Calls: []
   originPoint: {fileID: 1867372805}
   circleCollisionDetector:
-    DeltaPosition: {x: -0.19, y: -0.55}
+    DeltaPosition: {x: -0.25, y: -0.55}
     CircleRadius: 0.12
     CircleOffsetDistance: 5
 --- !u!1 &361099663
@@ -846,6 +846,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1587938176}
   - component: {fileID: 1587938175}
+  - component: {fileID: 1587938173}
   m_Layer: 3
   m_Name: PlayerSprite
   m_TagString: Untagged
@@ -853,6 +854,25 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!95 &1587938173
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1587938172}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 1623e90f1d6e5524bbcbb2162520dd72, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!212 &1587938175
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -893,7 +913,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 2
-  m_Sprite: {fileID: 21300000, guid: eef34ac8b754fa64fa83eac9f7162f81, type: 3}
+  m_Sprite: {fileID: 21300000, guid: a47f56ed16213c0448148ad79377574c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -1193,9 +1213,12 @@ GameObject:
   - component: {fileID: 1867372805}
   - component: {fileID: 1867372808}
   - component: {fileID: 1867372807}
+  - component: {fileID: 1867372812}
   - component: {fileID: 1867372806}
-  - component: {fileID: 1867372810}
+  - component: {fileID: 1867372813}
   - component: {fileID: 1867372809}
+  - component: {fileID: 1867372810}
+  - component: {fileID: 1867372811}
   m_Layer: 3
   m_Name: Player
   m_TagString: Untagged
@@ -1232,6 +1255,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d8e464dd6d7394241a255e6a11ad444c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  movementImpulseBase: {fileID: 1867372812}
   moveSpeed: 3
 --- !u!70 &1867372807
 CapsuleCollider2D:
@@ -1297,7 +1321,63 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61fccdf29ae9495a987f54b6b4bb9ccf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  jumpImpulseBase: {fileID: 1867372813}
   rigidbody2D: {fileID: 1867372808}
-  groundCollisionDetectionBase: {fileID: 1867372809}
+  groundCollisionDetectorManager: {fileID: 1867372809}
   jumpRecoil: 0.6
   jumpImpulse: 8
+--- !u!114 &1867372811
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1867372804}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fd4d3728dfe84ff78200acf138f163af, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animator: {fileID: 1587938173}
+  spriteRenderer: {fileID: 1587938175}
+  animatorMovementParameterName: IsWalking
+--- !u!114 &1867372812
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1867372804}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c88d9cd8be074e109bcb99a1083442e0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  impulseDirection:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1867372811}
+        m_TargetAssemblyTypeName: Animation.MovementAnimation.HorizontalMovementAnimationController,
+          Assembly-CSharp
+        m_MethodName: IsReceivingImpulse
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &1867372813
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1867372804}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bcc8b0320f51431897597bc2ea62eb69, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

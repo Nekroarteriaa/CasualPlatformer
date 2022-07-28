@@ -7,7 +7,7 @@ using UnityEngine;
 
 namespace CollisionDetection.GroundCollisionDetection.MultipleGroundCollisionDetectorManager
 {
-    public class MultipleGroundCollisionDetectorManager : GroundCollisionDetectorDetectorManager
+    public class MultipleGroundCollisionDetectorManager : GroundCollisionDetectorManager
     {
         [SerializeField] 
         private List<GroundCollisionDetectionBase> groundCollisionDetectionBases;

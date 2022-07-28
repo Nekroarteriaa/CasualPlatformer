@@ -3,11 +3,11 @@ using UnityEngine;
 
 namespace Jump.Rigidbody2DImplementation
 {
-    public class JumpBehaviourRigidbody2D : JumpBehaviourBase
+    public class Rigidbody2DJumpBehaviour : JumpBehaviourBase
     {
         private Rigidbody2D rigidbody2D;
 
-        public JumpBehaviourRigidbody2D(Rigidbody2D rigidbody2D)
+        public Rigidbody2DJumpBehaviour(Rigidbody2D rigidbody2D)
         {
             this.rigidbody2D = rigidbody2D;
         }

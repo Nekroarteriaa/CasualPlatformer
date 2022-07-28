@@ -5,7 +5,7 @@ using UnityEngine.Events;
 
 namespace CollisionDetection.GroundCollisionDetection.BaseImplementation
 {
-    public abstract class GroundCollisionDetectionBase : GroundCollisionDetectorDetectorManager, IGroundCollisionDetectorDetection
+    public abstract class GroundCollisionDetectionBase : GroundCollisionDetectorManager, IGroundCollisionDetectorDetection
     {
         [SerializeField]
         protected LayerMask hitMask;
