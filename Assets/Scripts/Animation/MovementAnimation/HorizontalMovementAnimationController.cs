@@ -1,3 +1,5 @@
+using NoCallbackVariables.Vector3Variable;
+using UnityAtoms.BaseAtoms;
 using UnityEngine;
 
 namespace Animation.MovementAnimation
@@ -10,15 +12,24 @@ namespace Animation.MovementAnimation
         [SerializeField]
         private SpriteRenderer spriteRenderer;
 
+        [SerializeField] 
+        private Vector3NoCallbackVariable movementVector3Variable;
+
         [SerializeField]
         private string animatorMovementParameterName;
-        
-        public void IsReceivingImpulse(bool impulse,Vector3 direction)
-        {
-            if(impulse)
-                spriteRenderer.flipX = !(direction.x > 0);
-            animator.SetBool(animatorMovementParameterName, impulse);
-        }
 
+        private void FixedUpdate()
+        {
+            if(movementVector3Variable == null) return;
+            if (movementVector3Variable.Value.x != 0)
+            {
+                spriteRenderer.flipX = !(movementVector3Variable.Value.x > 0);
+                animator.SetBool(animatorMovementParameterName, true);
+            }
+            else
+            {
+                animator.SetBool(animatorMovementParameterName, false);
+            }
+        }
     }
 }

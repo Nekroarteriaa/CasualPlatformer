@@ -1,0 +1,64 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f04e00c890644cc9adb05d0c17f5ee62, type: 3}
+  m_Name: SOGenerationDatabase
+  m_EditorClassIdentifier: 
+  _genericArgumentKeys: []
+  _genericArgumentValues:
+  - _array: []
+  - _array: []
+  - _array: []
+  - _array: []
+  - _array: []
+  - _array: []
+  - _array: []
+  _genericTypeValues: []
+  _genericTypeKeys:
+  - _typeNameAndAssembly: Unity.Cloud.Collaborate.Common.ScriptableObjectSingleton`1,
+      Unity.CollabProxy.Editor
+    _guid: 
+    AssemblyGUID: 
+    _argNames:
+    - T
+  - _typeNameAndAssembly: Cinemachine.Editor.CinemachineVirtualCameraBaseEditor`1,
+      com.unity.cinemachine.editor
+    _guid: 211d719bb25901043833928f50e9d0ea
+    AssemblyGUID: 
+    _argNames:
+    - T
+  - _typeNameAndAssembly: Cinemachine.Editor.BaseEditor`1, com.unity.cinemachine.editor
+    _guid: 15ef94834d9e4aa44ac8fe619843346b
+    AssemblyGUID: 
+    _argNames:
+    - T
+  - _typeNameAndAssembly: UnityEditor.U2D.Path.GenericScriptablePath`1, Unity.2D.Path.Editor
+    _guid: 
+    AssemblyGUID: 
+    _argNames:
+    - T
+  - _typeNameAndAssembly: UnityEditor.U2D.Path.GenericScriptablePathInspector`2,
+      Unity.2D.Path.Editor
+    _guid: 
+    AssemblyGUID: 
+    _argNames:
+    - U
+    - T
+  - _typeNameAndAssembly: UnityEditor.U2D.Path.ScriptableData`1, Unity.2D.Path.Editor
+    _guid: 
+    AssemblyGUID: 
+    _argNames:
+    - T
+  - _typeNameAndAssembly: UnityEditor.ScriptableSingleton`1, UnityEditor.CoreModule
+    _guid: 
+    AssemblyGUID: 
+    _argNames:
+    - T
