@@ -4,6 +4,7 @@ using Detection.DetectionController.GroundCollisionDetection.GroundCollisionDete
 using Managers.Behaviour.GroundCollisionDetectionManager;
 using UnityAtoms.BaseAtoms;
 using UnityEngine;
+using UnityEngine.Events;
 
 namespace Managers.Behaviour.MultipleGroundCollisionDetectionManager
 {
@@ -13,7 +14,8 @@ namespace Managers.Behaviour.MultipleGroundCollisionDetectionManager
         private BoolVariable groundCollisionDetectorBoolVariable;
         [SerializeField] 
         private List<GroundCollisionDetectionControllerBase> groundCollisionDetectionControllerBases;
-        
+
+
         public override bool IsGrounded 
         {  
             get => isGrounded;

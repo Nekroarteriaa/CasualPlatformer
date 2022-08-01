@@ -1359,6 +1359,7 @@ GameObject:
   - component: {fileID: 1867372809}
   - component: {fileID: 1867372810}
   - component: {fileID: 1867372811}
+  - component: {fileID: 1867372814}
   m_Layer: 3
   m_Name: Player
   m_TagString: Untagged
@@ -1519,3 +1520,41 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   jumpImpulseScriptableVariable: {fileID: 11400000, guid: 5544f1b1136cc114a9c375bbe6a67d85, type: 2}
+--- !u!114 &1867372814
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1867372804}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5913198e9d4f48bfac2c84fa0d8d0708, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentHealth:
+    _usage: 0
+    _value: 0
+    _constant: {fileID: 0}
+    _variable: {fileID: 0}
+    _variableInstancer: {fileID: 0}
+  maxHealth:
+    _usage: 0
+    _value: 0
+    _constant: {fileID: 0}
+    _variable: {fileID: 0}
+    _variableInstancer: {fileID: 0}
+  onReceivedDamage:
+    _usage: 0
+    _event: {fileID: 0}
+    _eventInstancer: {fileID: 0}
+    _variable: {fileID: 0}
+    _variableInstancer: {fileID: 0}
+  onDeath:
+    _usage: 0
+    _event: {fileID: 0}
+    _eventInstancer: {fileID: 0}
+    _collection: {fileID: 0}
+    _list: {fileID: 0}
+    _collectionInstancer: {fileID: 0}
+    _listInstancer: {fileID: 0}
