@@ -12,13 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cf8a67b68db3d4650908f8cf6adeda60, type: 3}
   m_Name: PlayerLife
   m_EditorClassIdentifier: 
-  _developerDescription: This variable works storage of the current player life
+  _developerDescription: This variable works as a reference value of the current
+    player life
   _id: 
   _value: 0
   _changed: {fileID: 11400000, guid: f606e88326d47a74b9a2c5b18c6ee2c9, type: 2}
   _changedWithHistory: {fileID: 0}
   _triggerChangedOnOnEnable: 0
   _triggerChangedWithHistoryOnOnEnable: 0
-  _oldValue: 0
+  _oldValue: 50
   _initialValue: 0
   _preChangeTransformers: []

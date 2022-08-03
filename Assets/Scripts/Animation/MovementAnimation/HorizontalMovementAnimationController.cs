@@ -1,5 +1,4 @@
 using NoCallbackVariables.Vector3Variable;
-using UnityAtoms.BaseAtoms;
 using UnityEngine;
 
 namespace Animation.MovementAnimation

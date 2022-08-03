@@ -1,7 +1,7 @@
 using Kill.Interface;
 using UnityEngine;
 
-namespace Kill.Behaviour
+namespace Death.Behaviour
 {
     public class DeathBehaviour : MonoBehaviour , IDeath
     {

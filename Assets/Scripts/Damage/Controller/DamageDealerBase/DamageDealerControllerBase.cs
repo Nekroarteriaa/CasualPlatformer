@@ -1,5 +1,5 @@
-using System;
 using Damage.Behaviour.DamageDealer;
+using Damage.Interface.DamageDealer;
 using UnityEngine;
 
 namespace Damage.Controller.DamageDealerBase
@@ -8,9 +8,9 @@ namespace Damage.Controller.DamageDealerBase
     {
         [SerializeField] 
         protected int damageToApply;
-        protected DamageDealerBehaviour damageDealerBehaviour;
+        protected IDamageDealer damageDealerBehaviour;
 
-        private void Awake()
+        protected virtual void Awake()
         {
             damageDealerBehaviour = new DamageDealerBehaviour();
         }
