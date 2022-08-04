@@ -3711,10 +3711,16 @@ MonoBehaviour:
     _constant: {fileID: 0}
     _variable: {fileID: 11400000, guid: 43a67db314955dd49bd158cae68ab573, type: 2}
     _variableInstancer: {fileID: 0}
+  groundedDetectionManagerVariable:
+    _usage: 2
+    _value: 0
+    _constant: {fileID: 0}
+    _variable: {fileID: 11400000, guid: f6700d416d9b6094db6e80e851f99dea, type: 2}
+    _variableInstancer: {fileID: 0}
   rigidbody2D: {fileID: 1867372808}
   currentHittedWallNormalDirection: {fileID: 11400000, guid: 1ed342d90d39da74eadf1ba38aee4dc9, type: 2}
   jumpRecoil: 0.6
-  jumpImpulse: 8
+  jumpImpulse: 6
 --- !u!114 &1867372819
 MonoBehaviour:
   m_ObjectHideFlags: 0
