@@ -1,6 +1,5 @@
 using Jump.Behaviour.Rigidbody2DJump;
 using Jump.Interface;
-using Managers.Behaviour.GroundCollisionDetectionManager;
 using UnityAtoms.BaseAtoms;
 using UnityEngine;
 
@@ -42,6 +41,11 @@ namespace Jump.JumpController.Rigidbody2DJump
             
             playerJump.Jump(jumpImpulse);
             nextJump = Time.time + jumpRecoil;
+        }
+
+        public void ResetVelocity()
+        {
+            rigidbody2D.velocity = Vector2.zero;
         }
     }
 }

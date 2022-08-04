@@ -1,7 +1,7 @@
 using System;
 using UnityEngine;
 
-namespace Collisions.Behaviour.GroundCollisionDetection.GroundCollisionDetectionShapes.Shapes2D.CircleCollisionDetectionShape2D
+namespace Collisions.Behaviour.CollisionRaycastDetectionShapes.Shapes2D.CircleCollisionDetectionShape2D
 {
     [Serializable]
     public class CircleRaycasterCollisionDetector
